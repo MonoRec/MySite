@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User implements UserInterface
+class User implements UserInterface 
 {
     /**
      * @var int
@@ -130,14 +130,17 @@ class User implements UserInterface
     public function getRoles()
     {
         return [
-            'ROLE_USER'
-        ]
+        'ROLE_USER'
+        ];
+    }
+
+     public function eraseCredentials()
+    {
     }
 
     public function getSalt()
     {
-        return $this->salt;
+        return null;
     }
-
 }
 
