@@ -26,4 +26,11 @@ class LoginController extends Controller
     		'error'         => $error,
     		));
     }
+
+    /**
+    * @Route("/logout", name="logout")
+    */
+    public function logoutAction() {
+
+    }
 }

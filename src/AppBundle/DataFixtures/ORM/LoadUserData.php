@@ -22,8 +22,10 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface {
 		$user = new User();
 		$user->setUsername('admin2');
 		$user->setEmail('admin@admin.com');
+		
 		$encoder = $this->container->get('security.password_encoder');
 		$password = $encoder->encodePassword($user, '123123');
+		
 		$user->setPassword($password);
 
 		$manager->persist($user);
@@ -36,8 +38,8 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface {
 	* @param ContainerInterface|null $container A ContainerInterface instance or null
 	*/
 
-	 public function setContainer(ContainerInterface $container = null)
-     {
-         $this->container = $container;
-     }
+	public function setContainer(ContainerInterface $container = null)
+	{
+		$this->container = $container;
+	}
 }
